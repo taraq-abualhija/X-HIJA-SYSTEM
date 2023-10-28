@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+  
+    <link
+      rel="stylesheet"
+      href="../bootstrap-icons-1.10.5/font/bootstrap-icons.min.css"
+    />
+    <link rel="shortcut icon" href="../img/ali.png" type="image/x-icon">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Hugo 0.112.5" />
+    <title>Edit page</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/icons-color.css">
+    <!-- Custom styles for this template -->
+    <link href="../css/sidebars.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/myStyle.css" />
+    <script defer src="../js/bootstrap.bundle.min.js"></script>
+    <script defer src="../js/color-modes.js"></script>
+    <script defer src="../js/sidebars.js"></script>
+    <script defer src="../js/main.js"></script>
+  </head>
+  <body>
+    <%- include ('../components/icons.ejs') %>
+
+    <main class="d-flex flex-nowrap">
+      <%- include ('../components/sidebar.ejs',{value:"search"}) %>
+
+      <section class="w-100">
+        <%- include ('../components/navbar.ejs') %>
+
+      <% if (arr.length!=0) { %>
+        <table
+        style="width: 99%"
+        class="text-center mx-auto table mt-5 table-striped table-bordered"
+      >
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Full Name</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Country</th>
+
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <% arr.forEach((item,index) => { %>
+        <tbody>
+          <tr>
+            <th scope="row"><%= index+1 %></th>
+            <td><%= item.FirstName %> <%= item.LastName %></td>
+            <td><%= item.Gender %></td>
+            <td><%= item.Country %></td>
+
+            <td>
+              <a
+                data-bs-toggle="tooltip"
+                data-bs-title="View details"
+                data-bs-placement="top"
+                class="btn btn-primary btn-sm"
+                href="view/<%= item.id %>"
+                ><i class="bi bi-eye"></i
+              ></a>
+
+              <a
+                data-bs-toggle="tooltip"
+                data-bs-title="Edit user"
+                data-bs-placement="top"
+                class="btn btn-primary btn-sm"
+                href="edit/<%= item.id %>"
+              >
+                <i class="bi bi-pencil"></i>
+              </a>
+              <form
+                style="display: inline"
+                action="/index/action/del/<%= item.id %>?_method=DELETE"
+                method="post"
+              >
+                <button
+                  class="btn btn-danger btn-sm mt-1 mt-sm-1 mt-md-1 mt-lg-0"
+                  data-bs-toggle="tooltip"
+                  data-bs-title="Delete user"
+                  data-bs-placement="top"
+                >
+                  <i class="bi bi-trash"></i>
+                </button>
+              </form>
+            </td>
+          </tr>
+        </tbody>
+        <% }) %>
+      </table>
+      <% } else { %>
+        <h1 style="text-align: center;margin-top: 40px;">No Data Available</h1>
+      <% } %>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100" data-bs-theme="auto">
+  <head>
+    <link
+      rel="stylesheet"
+      href="./bootstrap-icons-1.10.5/font/bootstrap-icons.min.css"
+    />
+    <link rel="shortcut icon" href="./img/ali.png" type="image/x-icon" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Hugo 0.112.5" />
+    <title>Home page</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./css/sidebars.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/myStyle.css" />
+    <link rel="stylesheet" href="./css/icons-color.css" />
+    <link rel="stylesheet" href="./css/welcome.css" />
+
+    <script defer src="./js/color-modes.js"></script>
+    <script defe src="./js/bootstrap.bundle.min.js"></script>
+    <script defer src="./js/sidebars.js"></script>
+    <script defer src="./js/main.js"></script>
+    <script defer src="./js/signup.js"></script>
+  </head>
+
+  <body class="d-flex h-100 text-center text-bg-dark">
+    <!-- <%- include ('../components/welcomeComp.ejs') %> -->
+
+    <%- include
+    ('../components/welcomeHeader.ejs',{value:"signup",userStatus:null}) %>
+
+    <main class="px-3">
+      <form id="formSignUp" style="width: 22rem" class="mx-auto">
+        <h1 style="color: yellowgreen" class="h3 mb-5 fw-bold">Sign up</h1>
+
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingInput"
+            placeholder="name@example.com"
+            name="username"
+          />
+          <label for="floatingInput">Username</label>
+        </div>
+
+        <div class="form-floating mb-2">
+          <input
+            type="email"
+            class="form-control"
+            id="floatingInputEmail"
+            placeholder="name@example.com"
+            name="email"
+          />
+          <label for="floatingInput">Email address</label>
+          <p id="errorEmail"></p>
+        </div>
+        <div class="form-floating">
+          <input
+            type="password"
+            class="form-control"
+            id="floatingPassword"
+            placeholder="Password"
+            name="password"
+          />
+          <label for="floatingPassword">Password</label>
+          <p id="errorPassword" ></p>
+        </div>
+
+        <div class="form-check text-start my-3">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="remember-me"
+            id="flexCheckDefault"
+          />
+          <label class="form-check-label" for="flexCheckDefault">
+            Remember me
+          </label>
+        </div>
+        <button
+          style="background-color: yellowgreen"
+          class="btn text-white fw-bold w-50 py-2"
+          type="submit"
+        >
+          Sign up
+        </button>
+      </form>
+    </main>
+
+    <%- include ('../components/welcomeFooter.ejs') %>
+
+
+  </body>
+</html>

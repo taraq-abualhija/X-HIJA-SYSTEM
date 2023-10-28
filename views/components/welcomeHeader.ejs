@@ -1,0 +1,21 @@
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <div class="d-flex justify-content-between">
+      <a href="/" style="cursor: pointer; text-decoration: none;">
+        <h3 style="color: yellowgreen" class="float-md-start mb-0 ">HIJA</h3>
+      </a>
+      
+<% if (userStatus==null) { %>
+ <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a style="color: yellowgreen" class="nav-link fw-bold py-1 px-0 <%= value == "login" ? "active" : null %> " aria-current="page" href="/login">Log in</a>
+        <a style="color: yellowgreen" class="nav-link fw-bold py-1 px-0 <%= value == "signup" ? "active" : null %>  " href="/signup">Sign Up</a>
+      </nav>
+<% } else { %>  
+  <nav class="d-flex align-items-center">
+    <p style="color:yellowgreen;  " class="mb-0 me-4 fw-bold "><%= userStatus.username %></p>
+    <a style="color: yellowgreen" class="nav-link fw-bold py-1 px-0 " aria-current="page" href="/signout">Sign out</a>
+  </nav>
+<% } %>
+      
+    </div>
+  </header>

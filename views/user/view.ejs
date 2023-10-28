@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+  
+    <link
+      rel="stylesheet"
+      href="../bootstrap-icons-1.10.5/font/bootstrap-icons.min.css"
+    />
+    <link rel="shortcut icon" href="../img/ali.png" type="image/x-icon">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Hugo 0.112.5" />
+    <title>Edit page</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/icons-color.css">
+    <!-- Custom styles for this template -->
+    <link href="../css/sidebars.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/myStyle.css" />
+    <script defer src="../js/bootstrap.bundle.min.js"></script>
+    <script defer src="../js/color-modes.js"></script>
+    <script defer src="../js/sidebars.js"></script>
+    <script defer src="../js/main.js"></script>
+  </head>
+  <body>
+    <%- include ('../components/icons.ejs') %>
+
+    <main class="d-flex flex-nowrap">
+      <%- include ('../components/sidebar.ejs',{value:"view"}) %>
+
+      <section class="w-100"> 
+        <%- include ('../components/navbar.ejs') %>
+        <nav class="m-2 mt-3 d-flex justify-content-between 
+        flex-wrap" aria-label="breadcrumb">
+        <ol class="breadcrumb ms-3">
+          <li class="breadcrumb-item"><a href="/home">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page"><%= obj.FirstName %> <%= obj.LastName %></li>
+        </ol> 
+        <p class="me-lg-5 me-md-3"><strong>ID</strong>: <%= obj.id %></p>
+      </nav>
+
+      <table style="width: 90%;" class="mx-auto table table-striped m-2 mt-4 table-bordered">
+        <tbody>
+          <tr>
+            <th class="col-3" scope="row">First Name</th>
+            <td><%= obj.FirstName %></td>
+          </tr>
+          <tr>
+            <th scope="row">Last Name</th>
+            <td><%= obj.LastName %></td>
+          </tr>
+          <tr>
+            <th scope="row">Telephone</th>
+            <td><%= obj.Telephone %></td>
+          </tr>
+          <tr>
+            <th scope="row">Email</th>
+            <td><%= obj.Email %></td>
+          </tr>
+          <tr>
+            <th scope="row">Gender</th>
+            <td><%= obj.Gender %></td>
+          </tr>
+          <tr>
+            <th scope="row">Age</th>
+            <td><%= obj.Age %></td>
+          </tr>
+          <tr>
+            <th scope="row">Country</th>
+            <td><%= obj.Country %></td>
+          </tr>
+          <tr>
+            <th scope="row">Created On</th>
+            <td><%= moment(obj.createdAt).fromNow() %></td>
+          </tr>
+          <tr>
+            <th scope="row">Last Update</th>
+            <td><%= moment(obj.updatedAt).fromNow() %></td>
+          </tr>
+      
+        </tbody>  
+      </table>
+      </section>
+    </main>
+
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100" data-bs-theme="auto">
+  <head>
+    <link
+      rel="stylesheet"
+      href="./bootstrap-icons-1.10.5/font/bootstrap-icons.min.css"
+    />
+    <link rel="shortcut icon" href="./img/ali.png" type="image/x-icon" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Hugo 0.112.5" />
+    <title>Home page</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./css/sidebars.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/myStyle.css" />
+    <link rel="stylesheet" href="./css/icons-color.css" />
+    <link rel="stylesheet" href="./css/welcome.css" />
+
+    <script defer src="./js/color-modes.js"></script>
+    <script defe src="./js/bootstrap.bundle.min.js"></script>
+    <script defer src="./js/sidebars.js"></script>
+    <script defer src="./js/main.js"></script>
+  </head>
+
+  <body class="d-flex h-100 text-center text-bg-dark">
+    <!-- <%- include ('./components/welcomeComp.ejs') %> -->
+    <%- include ('./components/welcomeHeader.ejs',{value:null}) %>
+
+    <main class="px-3">
+      <h1>Welcome to <span style="color: yellowgreen">X-HIJA System</span></h1>
+      <p class="lead">
+        To help you with storing and organizing the data created and collected
+        by an organization. The data management process aim to make sure the
+        data in corporate systems is accurate, available and accessible.
+      </p>
+      <p class="lead">
+        <a  
+          href="/home"
+          style="background-color: yellowgreen"
+          class="btn btn-lg btn-light fw-bold text-white"
+          >Dashboard</a
+        >
+      </p>
+    </main>
+    <%- include ('./components/welcomeFooter.ejs') %>
+  </body>
+</html>

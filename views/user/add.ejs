@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <link
+      rel="stylesheet"
+      href="../bootstrap-icons-1.10.5/font/bootstrap-icons.min.css"
+    />
+    <link rel="shortcut icon" href="../img/ali.png" type="image/x-icon" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Hugo 0.112.5" />
+    <title>Home page</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/icons-color.css" />
+
+    <!-- Custom styles for this template -->
+    <link href="../css/sidebars.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/myStyle.css" />
+    <script defer src="../js/bootstrap.bundle.min.js"></script>
+    <script defer src="../js/color-modes.js"></script>
+    <script defer src="../js/sidebars.js"></script>
+    <script defer src="../js/main.js"></script>
+  </head>
+  <body>
+    <%- include ('../components/icons.ejs') %>
+
+    <main class="d-flex flex-nowrap">
+      <%- include ('../components/sidebar.ejs',{value:"add"}) %>
+      <section class="w-100">
+        <%- include ('../components/navbar.ejs') %>
+
+        <form action="/user/add.html" class="row g-3 m-3" method="post">
+          <div class="col-md-6">
+            <label for="inputFirstname4" class="form-label">First Name :</label>
+            <input
+              name="FirstName"
+              type="text"
+              class="form-control"
+              id="inputFirstname4"
+              
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputLastname4" class="form-label">Last Name :</label>
+            <input
+              name="LastName"
+              type="text"
+              class="form-control"
+              id="inputLastname4"
+              
+              
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input
+              name="Email"
+              type="email"
+              class="form-control"
+              id="inputEmail4"
+              
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputTelephone4" class="form-label">Telephone:</label>
+            <input
+              name="Telephone"
+              type="text"
+              class="form-control"
+              id="inputTelephone4"
+              
+            />
+          </div>
+
+          <div class="col-md-6">
+            <label for="inputAge" class="form-label">Age</label>
+            <input
+              name="Age"
+              type="number"
+              class="form-control"
+              id="inputAge"
+              placeholder="Your age :"
+              
+            />
+          </div>
+
+          <div class="col-md-6">
+            <label for="inputGender" class="form-label">Gender </label>
+            <select id="inputGender" class="form-select" name="Gender" >
+              <option selected>Choose...</option>
+              <option>Male</option>
+              <option>Female</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label for="inputCountry" class="form-label">Country</label>
+            <select id="inputCountry" class="form-select" name="Country" >
+              <option selected>Choose...</option>
+              <% var country_list = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua &amp; Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia &amp; Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Cape Verde","Cayman Islands","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cruise Ship","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kuwait","Kyrgyz Republic","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Mauritania","Mauritius","Mexico","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Namibia","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","Norway","Oman","Pakistan","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre &amp; Miquelon","Samoa","San Marino","Satellite","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","South Africa","South Korea","Spain","Sri Lanka","St Kitts &amp; Nevis","St Lucia","St Vincent","St. Lucia","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad &amp; Tobago","Tunisia","Turkey","Turkmenistan","Turks &amp; Caicos","Uganda","Ukraine","United Arab Emirates","United Kingdom","Uruguay","Uzbekistan","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"]%>
+              <<% for( let i = 0; i < country_list.length; i++ ) { %>
+              <option><%= country_list[i] %></option>
+              <% } %>
+            </select>
+          </div>
+
+          <div class="col-12 mt-4">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+  </body>
+</html>
