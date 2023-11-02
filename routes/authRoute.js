@@ -4,6 +4,7 @@ const authController = require("../controllers/authController");
 const { check, validationResult } = require("express-validator");
 
 router.get("*", authController.checkIfUser);
+router.post("*", authController.checkIfUser);
 router.get("/signout", authController.user_signout_get);
 router.get("/", authController.user_welcomePage_get);
 router.get("/login", authController.user_loginAuth_get);
@@ -15,7 +16,7 @@ const arrCheck =
     "password",
     "Password must be at least 8 characters with 1 upper case letter and 1 number"
   ).matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!"@#\$%\^&\*])(?=.{8,})/),
-];
+]; 
 router.post("/signup", arrCheck, authController.user_signUp_post);
 router.post("/login", authController.user_login_post);
 

@@ -2,7 +2,8 @@ const express = require("express");
 const router = express.Router();
 const userController = require("../controllers/userController");
 var requireAuth = require("../middleware/middleware");
-
+const multer = require("multer");
+const upload = multer({ storage: multer.diskStorage({}) });
 
 // GET request
 router.get("/home", requireAuth, userController.user_index_get);
@@ -10,9 +11,10 @@ router.get("/user/add.html", requireAuth, userController.user_add_get);
 router.get("/view/:id", requireAuth, userController.user_view_get);
 router.get("/edit/:id", requireAuth, userController.user_edit_get);
 
-// POST request
+// POST request 
 router.post("/user/add.html", userController.user_add_post);
 router.post("/search", userController.user_search_post);
+router.post("/profile-update",upload.single("avatar"),userController.user_profilePicture_post);
 
 // DELETE request
 

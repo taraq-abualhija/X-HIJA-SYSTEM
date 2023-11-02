@@ -69,7 +69,6 @@ const user_login_post = async (req, res) => {
   console.log("__________________________________________");
   try {
     const loginUser = await userModel.findOne({ email: req.body.email });
-    console.log(loginUser);
 
     if (loginUser == null) {
       res.json({ notFoundEmail: "this email not found in DATABASE" });

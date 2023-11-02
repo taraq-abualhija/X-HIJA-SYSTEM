@@ -9,10 +9,10 @@ const requireAuth = (req, res, next) => {
       } else {
         next();
       }
-    });
+    }); 
   } else {
     res.redirect("/login");
   }
 }; 
-
+ 
 module.exports=requireAuth
